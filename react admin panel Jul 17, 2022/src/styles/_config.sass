@@ -1,0 +1,58 @@
+// USER VARIABLES SECTION
+
+$accent: #82B284 // Accent Color
+$accent-light: #A4C7A5 // Accent Color
+$fontsize: 14px // Body Font Size
+$font-size-root: 14px // Body Font Size
+$textcolor: #3B3B3B// Text Color
+$text-dark: #222222
+$text-light: #808080
+$text-footer: #B9B9B9
+
+$userfont: Noto Sans, sans-serif // User Font Family
+$systemfont: -apple-system, BlinkMacSystemFont, Arial, sans-serif // System Font Family
+
+$bg: #EEEEEE
+$bg-light: #F7F7F7
+$separator: #E5E5E5
+$separator-hover: #CDCDCD
+
+$button-hover: #98C88C
+$button-pressed: #58A742
+
+$spacing-big: 24px
+$spacing-sm: 12px
+
+// Bootstrap compatible gutter variable => $gutter
+$grid-gutter-width: 30px
+$gutter: $grid-gutter-width
+
+// IMPORT SECTION
+
+@import bootstrap-reboot.min
+@import micromodal
+
+
+// GENERAL DOCUMENT STYLES
+
+::placeholder
+	color: #666
+
+::selection
+	background-color: $accent
+	color: #fff
+
+input, textarea
+	outline: none
+	&:focus:required:invalid
+		border-color: red
+	&:required:valid
+		border-color: green
+
+body
+	font-family: $userfont
+	font-size: $fontsize
+	color: $textcolor
+	min-width: 320px
+	position: relative
+	overflow-x: hidden

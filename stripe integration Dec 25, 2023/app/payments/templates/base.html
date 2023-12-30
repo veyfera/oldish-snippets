@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/x-icon" href="{% static 'favicon.ico'%}">
+  <title></title>
+  {% block scripts %}{% endblock %}
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/cart/">Cart</a>
+    </nav>
+  </header>
+
+  {% block content %}{% endblock %}
+
+</body>
+<script>
+  const cartLink = document.querySelector("a[href='/cart/']");
+  const cartId = localStorage.getItem('cartId');
+  if (cartId) {
+    cartLink.href = cartLink.href + cartId;
+  }
+</script>
+</html>

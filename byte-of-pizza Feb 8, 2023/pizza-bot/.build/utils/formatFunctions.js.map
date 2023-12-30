@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../utils/formatFunctions.ts"],
+  "sourcesContent": ["\ntype Order = {\n  user:object,\n  orderInfo:object\n}\n\nexport const formatOrder = (data: any) => {\n  console.log('Reply form slack: ', data);\n  const formatedOrder:Order= { user: data.user, orderInfo: {} };\n  formatedOrder.user.img = `https://ca.slack-edge.com/${data.user.team_id}-${data.user.id}-09b1bde6579a-72`\n  Object.keys(data.state.values).forEach(key => formatedOrder.orderInfo[key] = data.state.values[key].pizza_option.selected_option || data.state.values[key].pizza_option.value)\n  console.log(formatedOrder);\n\n  return formatedOrder\n}"],
+  "mappings": ";;;;;;;;;;;;;;;;;;AAAA;AAAA;AAAA;AAAA;AAAA;AAMO,MAAM,cAAc,CAAC,SAAc;AACxC,UAAQ,IAAI,sBAAsB,IAAI;AACtC,QAAM,gBAAqB,EAAE,MAAM,KAAK,MAAM,WAAW,CAAC,EAAE;AAC5D,gBAAc,KAAK,MAAM,6BAA6B,KAAK,KAAK,WAAW,KAAK,KAAK;AACrF,SAAO,KAAK,KAAK,MAAM,MAAM,EAAE,QAAQ,SAAO,cAAc,UAAU,OAAO,KAAK,MAAM,OAAO,KAAK,aAAa,mBAAmB,KAAK,MAAM,OAAO,KAAK,aAAa,KAAK;AAC7K,UAAQ,IAAI,aAAa;AAEzB,SAAO;AACT;",
+  "names": []
+}

@@ -1,0 +1,58 @@
+$accent: #BE1931
+$light: #FFE7AE
+
+.logo
+  color: #0056DC
+  font-weight: 600
+  letter-spacing: 2px
+  font-size: 24px
+  span
+    color: lighten($accent, 20%)
+
+ul
+  list-style: none
+  margin: 0
+  padding: 0
+
+.orders__header
+  display: flex
+  justify-content: space-between
+  align-content: center
+  padding: 20px 0 40px
+
+blockquote
+  margin: auto 0
+  font-style: italic
+  color: #555
+
+.orders__logout
+  border: none
+  background-color: $light
+  border-radius: 10px
+  padding: 5px 10px
+  color: #000
+  cursor: pointer
+  transition: background-color .25s ease-in-out
+  &:hover
+    background-color: darken($light, 10%)
+
+.nav-link
+  color: $accent
+
+.orders__error
+  text-align: center
+  padding: 50px
+  font-size: 20px
+  background-color: $light
+  border-radius: 10px
+  margin-top: 40px
+  transform-origin: top
+  animation: animate-error 1s ease-in-out
+
+@keyframes animate-error
+  0%
+    opacity: 0
+    transform: scale(1, 0)
+  100%
+    opacity: 1
+    transform: scale(1, 1)

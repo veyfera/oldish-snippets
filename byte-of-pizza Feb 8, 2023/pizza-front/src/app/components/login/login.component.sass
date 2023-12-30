@@ -1,0 +1,31 @@
+$accent: #BE1931
+$light: #FFE7AE
+
+.login
+  display: flex
+  flex-direction: column
+  padding: 0 30%
+  margin-top: 10%
+
+.login__prompt
+  font-size: 24px
+  margin-bottom: 20px
+
+input
+  margin: 5px 0
+  border: 1px solid $light
+  padding: 10px
+  border-radius: 10px
+  &:focus
+    outline-color: darken($light, 20%)
+
+button
+  border: none
+  background-color: $light
+  border-radius: 10px
+  padding: 10px
+  cursor: pointer
+  margin: 20px 0
+  transition: background-color .25s ease-in-out
+  &:hover
+    background-color: darken($light, 10%)

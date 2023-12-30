@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block titile %}
+  {{item.name}}
+{% endblock %}
+
+{% block scripts %}
+  <script src="https://js.stripe.com/v3/"></script>
+  <script src={% static 'common.js' %}></script>
+{% endblock%}
+
+{% block content %}
+
+  <h1>{{item.name}}</h1>
+  <p>{{item.description}}</p>
+  <div>{{item.price}} {{item.currency}}</div>
+
+  <button id="{{ item.id }}" class="buy-btn">Buy</button>
+  <button id="{{ item.id }}" class="add-to-cart-btn">Add to cart</button>
+
+{% endblock %}

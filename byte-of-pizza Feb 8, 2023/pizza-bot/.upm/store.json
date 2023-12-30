@@ -1,0 +1,1 @@
+{"version":2,"languages":{"nodejs-npm":{"specfileHash":"b0b8e618ea3f8ea01f2e4c78e94443a6","lockfileHash":"d0f170edebba36b1c40da01e2d59054f","guessedImports":["@slack/bolt","dotenv","amqplib"],"guessedImportsHash":"6f85630ecbd4a4efc4fecae994f14fce"}}}

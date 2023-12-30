@@ -1,0 +1,14 @@
+<div class="container text-center">
+    <div class="login">
+        <div class="login__prompt">
+            Пожалуйста авторизуйтесь в системе
+        </div>
+        <input type="text" [(ngModel)]="username" placeholder="Имя пользователя">
+        <input type="password" [(ngModel)]="password" placeholder="Пароль">
+        <button (click)="onSubmit()">Войти</button>
+    </div>
+    <div class="login__error" *ngIf="error">
+        {{error}}
+    </div>
+</div>
+

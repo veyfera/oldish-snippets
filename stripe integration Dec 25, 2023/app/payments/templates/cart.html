@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block titile %}
+  Cart
+{% endblock%}
+
+{% block scripts %}
+  <script src="https://js.stripe.com/v3/"></script>
+  <script src={% static 'cart.js' %}></script>
+{% endblock %}
+
+{% block content %}
+
+  <h1>Cart</h1>
+
+  {% if cart.items %}
+  <ul>
+    {% for item in cart.items %}
+    <li>
+      <div>{{ item.name }} - {{ item.price }} {{ item.currency }}</div>
+    </li>
+    {% endfor %}
+
+  </ul>
+  Grand total: {{ cart.total }}
+  <button id={{cart.id}} class="buy-all-btn">Buy all</button>
+  {% else %}
+  Your cart is empty
+  {% endif %}
+
+{% endblock %}

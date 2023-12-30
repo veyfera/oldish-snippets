@@ -1,0 +1,199 @@
+main
+  height: 900px
+  width: 100%
+  overflow-y: scroll
+  position: relative
+  box-shadow: 5px -30px 40px rgba(0, 0, 0, 0.15)
+  
+
+main::before
+  content: ''
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.072) 0%, rgba(255, 255, 255, 0) 100%)
+  transform: matrix(-1, 0, 0, 1, 0, 0)
+  position: absolute
+  top: 0
+  bottom: 0
+  left: -21px
+  width: 21px
+
+header
+  position: sticky
+  top: 0
+  width: 100%
+  background-color: #fff
+  z-index: 1
+  
+.header__content-wrapper
+  display: flex
+  align-items: center
+  justify-content: space-between
+  height: 72px
+  padding: 26px 40px
+  border-bottom: 1px solid $separator
+
+.back-button
+  display: flex
+  align-items: center
+  p
+    display: inline-block
+    margin: 0
+    margin-left: 16px
+    color: $accent
+    font-size: 16px
+    font-weight: 600
+  img
+    width: 20px
+    height: 20px
+    cursor: pointer
+
+.actions
+  img
+    margin: 0 $spacing-sm
+    cursor: pointer
+    &:last-child
+      margin-right: 0
+
+
+.main-block
+  margin: 0 40px
+  margin-top: 24px
+  &__title
+    margin-top: $spacing-big
+    display: flex
+    align-items: center
+    h2
+      font-size: 20px
+      font-weight: 400
+      line-height: 24px
+      color: $text-dark
+      margin: 0
+      margin-right: $spacing-sm
+    img
+      width: 20px
+      height: 20px
+      cursor: pointer
+  &__info
+    margin-top: $spacing-big
+    margin-bottom: 31px
+    padding-bottom: 31px
+    border-bottom: 1px solid $separator
+    position: relative
+    &:last-child
+      margin-bottom: 0
+
+.info
+  &__title
+    margin-bottom: 20px
+    display: flex
+    align-items: center
+    h3
+      font-size: 16px
+      font-weight: 300
+      line-height: 20px
+      margin: 0
+      margin-right: 16px
+    img
+      cursor: pointer
+
+.data-item
+  margin-bottom: $spacing-sm
+  display: grid
+  grid-template-columns: 150px auto
+  column-gap: 12px
+  line-height: 22.4px
+  &__label, &__text
+    display: inline-block
+    letter-spacing: 0.25px
+  &__label
+    font-weight: 300
+    margin-right: $spacing-sm
+    display: flex
+    align-items: center
+  &__text
+    font-weight: 400
+    margin: 0
+    &_type_mail
+      color: $accent
+      a
+        color: $accent
+        text-decoration: none
+
+  &:last-child
+    margin-bottom: 0
+
+.photo
+  display: inline-block
+  position: relative
+  font-size: 12px
+  line-height: 16px
+  font-weight: 400
+  padding: 0
+  margin: 0
+  margin-right: $spacing-big
+  margin-left: -4px
+  margin-bottom: 20px
+  &:nth-child(2)
+    margin-left: 0
+  &__name
+    margin: 0
+    margin-top: 8px
+    max-width: 160px
+    text-overflow: ellipsis 
+    overflow: hidden
+  &__date
+    margin: 0
+    margin-top: 4px
+    color: $text-light
+  &__delete
+    position: absolute
+    top: 8px
+    right: 8px
+    cursor: pointer
+
+    
+.button
+  display: flex
+  color: $accent
+  padding: 9px 40px
+  border: 1px solid $separator
+  max-width: 400px
+  align-items: center
+  justify-content: center
+  position: relative
+  cursor: pointer
+  transition: color .25s ease-in-out, background-color .25s ease-in-out
+  p
+    margin: 0
+    font-weight: 600
+    line-height: 160%
+    line-height: 20px
+  svg
+    position: absolute
+    top: 12px
+    left: 12px
+    path
+      fill: $accent
+      transition: fill 2s ease-in-out
+  &:hover
+    color: $button-hover
+    border-color: $separator-hover
+    svg
+      path
+        fill: $button-hover
+  &:active
+    color: $button-pressed
+    svg
+      path
+        fill: $button-pressed
+
+footer
+  text-align: center
+  grid-column-start: 2
+  grid-column-end: 3
+  p
+    margin-top: 32px
+    //margin-bottom: 46px
+    color: $text-footer
+    font-size: 12px
+    font-weight: 400
+    line-height: 16px

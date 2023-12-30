@@ -1,0 +1,23 @@
+.App 
+  text-align: center
+  background-color: $light
+  min-height: 100vh
+
+.home
+  display: flex
+  flex-direction: column
+
+.menu
+  a
+    color: $textcolor
+    font-size: $spacing-big
+    text-decoration: none
+    display: block
+    padding: $spacing-big
+    background-color: $bg
+    margin: $spacing-big auto
+    width: 50%
+    transition: background-color .25s ease-in-out
+    &:hover
+      background-color: darken($bg, 10%)
+    

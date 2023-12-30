@@ -1,0 +1,22 @@
+
+<div class="container">
+    <header class="orders__header">
+        <div class="logo">Standuply<span>Pizza</span></div>
+        <blockquote>"Ну, граждане алкоголики, хулиганы, тунеядцы… Кто хочет сегодня поработать?"</blockquote>
+        <div class="logout">
+            <button (click)="logOut()" class="orders__logout">Выйти из аккаунта</button>
+        </div>
+    </header>
+    <ul class="nav nav-tabs nav-fill">
+    <li class="nav-item" *ngFor="let category of categories">
+        <a class="nav-link" [class.active]="category === selectedCategory" routerLink="/orders" (click)="setCategory(category)">{{category.text}}</a>
+    </li>
+    </ul>
+
+    <ul *ngFor="let order of filteredOrders">
+        <li><app-order-item [order]="order" (changeOrder)="filterOrders()"></app-order-item></li>
+    </ul>
+    <div *ngIf="filteredOrders.length === 0" class="orders__error">Нет заказов со статусом "{{this.selectedCategory.text}}"</div>
+</div>
+
+

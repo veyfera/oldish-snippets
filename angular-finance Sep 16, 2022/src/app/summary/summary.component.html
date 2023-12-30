@@ -1,0 +1,33 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+
+            <div class="card">
+            <div class="card-header">
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Welcome</h5>
+                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                <a routerLink="/navigator" class="btn btn-primary">See transactons</a>
+            </div>
+            <div class="card-footer">
+                You have {{transactions.length}} transactions
+            </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6" *ngFor="let category of categories; let i = index">
+
+            <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">{{countTransactionsOfType(category.searchTerm)}}</h5>
+                <p class="card-text">{{category.name}}</p>
+                <a routerLink="/navigator" [queryParams]="{page:i}"  class="btn btn-primary">See all</a>
+            </div>
+            </div>
+
+        </div>
+    </div>
+</div>

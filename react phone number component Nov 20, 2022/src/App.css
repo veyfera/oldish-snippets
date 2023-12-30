@@ -1,0 +1,34 @@
+form {
+margin: 100px 0;
+}
+
+input{
+    font-size: 24px;
+}
+
+.phone-input{
+    outline: medium solid;
+    /*outline-color: grey;*/
+    outline-color: #F1F1EF;
+}
+
+.phone-input:focus {
+    /*outline-color: lightblue;*/
+    outline-color: #E7F3F8;
+}
+.phone-input_status_no-match:focus {
+    /*outline-color: yellow;*/
+    outline-color: #FBF3DB;
+}
+
+.phone-input:focus:invalid {
+    /*outline-color: red;*/
+    outline-color: #FDEBEC;
+}
+
+
+
+.App {
+  text-align: center;
+}
+

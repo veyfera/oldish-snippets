@@ -1,0 +1,38 @@
+.modal
+
+.modal__container
+  border-radius: 0
+  width: 320px
+  padding: 24px
+  box-shadow: 0px 5px 40px rgba(0, 0, 0, 0.15)
+
+.modal__overlay
+  z-index: 2
+  background-color: transparent
+
+.modal__header
+  h2
+    font-size: 20px
+    line-height: 28px
+    font-weight: 400
+    margin: 0
+
+.modal__content
+  margin: 0
+  p
+    margin-top: 16px
+    margin-bottom: 50px
+
+.content__buttons
+  display: flex
+  align-items: center
+  justify-content: space-between
+  div
+    font-size: 16px
+    line-height: 20px
+    font-weight: 600
+    cursor: pointer
+    &:first-child
+      color: $text-footer
+    &:last-child
+      color: $accent

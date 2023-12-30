@@ -1,0 +1,48 @@
+.order-item
+  display: flex
+  background-color: #fefefe
+  border: 1px solid #eee
+  padding: 20px
+  margin-bottom: 10px
+
+.order-item__user
+  margin-right: 40px
+
+.order-item__info
+  display: flex
+  flex-wrap:  wrap
+
+.order-item__info-item
+  margin: 10px 0
+  width: 25%
+  span
+    display: block
+    opacity: .7
+  &:nth-last-child(-n+3)
+    width: 33%
+    margin-top: 20px
+  &:last-child
+    text-align: right
+    align-self: flex-end
+  select
+    padding: 5px
+    border-color: #ddd
+    background-color: transparent
+
+
+.user
+  display: flex
+  flex-direction: column
+  align-items: center
+  justify-content: flex-start
+  text-align: center
+
+.user__img
+  width: 70px
+  height: 70px
+  border-radius: 70px
+  margin-bottom: 10px
+
+.user__order-time
+  margin-top: auto
+  opacity: .7

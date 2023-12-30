@@ -1,0 +1,158 @@
+.event-card
+  border-radius: 24px
+  background-color: #fff
+  padding-bottom: 24px
+  >*
+    padding: 0 32px
+    @media (max-width : 768px)
+      padding: 0 24px
+  header
+    grid-area: date
+    border-radius: 24px 24px 0 0
+    background-color: $dark-bg
+    height: 56px
+    h2
+      line-height: 125%
+      padding: 13px 0
+      font-size: 24px
+      span
+        margin-left: 12px
+        padding-left: 12px
+        border-left: 1px solid $textcolor
+    @media (max-width : 768px)
+      height: 63px
+      h2
+        font-size: 18px
+        padding: 20px 0
+
+  main
+    margin-top: 40px
+    width: 100%
+    display: grid
+    grid-template-areas: "time content join" "swiper swiper swiper"
+    grid-template-columns: 1fr
+    @media (max-width : 1024px)
+      grid-template-areas: "time content" "swiper swiper" "join join"
+    @media (max-width : 768px)
+      display: flex
+      flex-direction: column
+      margin-top: 32px
+
+.event-card__time
+  grid-area: time
+  font-size: 36px
+  font-weight: 800
+  margin: 0
+  margin-right: 32px
+  line-height: 125%
+  sup
+    margin-left: 8px
+    font-size: 16px
+    vertical-align: 10px
+  @media (max-width : 768px)
+    font-size: 24px
+    margin-bottom: 12px
+    sup
+      font-size: 14px
+      vertical-align: 5px
+
+.event-card__content
+  grid-area: content
+  max-width: 903px
+  margin-right: 40px
+  margin-bottom: 36px
+  position: relative
+  h4
+    font-size: 16px
+    font-weight: 700
+    margin-bottom: 14px
+  p
+    line-height: 155%
+    margin-bottom: 14px
+  button
+    border-radius: 6px
+    border: none
+    padding: 4px 20px
+    cursor: pointer
+  ol
+    height: 0
+    overflow: hidden
+    border-radius: 0 6px 6px 6px
+    background-color: $light-bg
+    margin-top: -1px
+    padding: 0 24px
+    transition: .25s ease-in-out height, .25s ease-in-out padding
+    list-style-position: inside
+  @media (max-width : 768px)
+    font-size: 14px
+    margin-right: 0
+    margin-bottom: 30px
+    h4
+      margin-bottom: 12px
+      font-size: 14px
+    p
+      margin-bottom: 12px
+    ol
+      padding: 0 12px
+      margin: 0
+
+.event-card__join
+  grid-area: join
+  text-align: center
+  min-width: 264px
+  p
+    margin: 0
+    margin-top: 16px
+    font-size: 14px
+  @media (max-width : 1024px)
+    min-width: unset
+    margin-top: 36px
+  @media (max-width : 768px)
+    order: 1
+
+.event-card__swiper
+  grid-area: swiper
+  width: 100%
+  position: relative
+  h2
+    font-size: 16px
+    color: $dark-bg
+    position: relative
+    overflow: hidden
+    margin-bottom: 36px
+    &::after
+      content: ''
+      position: absolute
+      width: 100%
+      top: 50%
+      height: 1px
+      margin-left: 24px
+      background-color: $dark-bg
+  @media (max-width : 768px)
+    h2
+      padding-top: 10px
+      font-size: 14px
+      &::after
+        top: 0
+        right: 0
+
+.event-card__navigation
+  position: absolute
+  bottom: 34px
+  right: 0
+  left: 0
+  display: flex
+  justify-content: space-between
+  flex-direction: row
+  align-content: center
+
+
+//Clases for animation of program schedule
+.expanded-btn
+  border-radius: 6px 6px 0 0!important
+
+.show-block
+  height: auto!important
+  padding: 24px!important
+  @media (max-width : 768px)
+    padding: 12px!important

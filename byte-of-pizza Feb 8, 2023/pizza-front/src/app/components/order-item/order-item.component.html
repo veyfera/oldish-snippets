@@ -1,0 +1,41 @@
+<div class="order-item" *ngIf="order">
+    <div class="user order-item__user">
+        <div class="user__img" style="background-image: url({{order.user.img}})"></div>
+        <div class="user__name">{{order.user.name}}</div>
+        <div class="user__order-time">{{order.createdAt | date:'medium'}}</div>
+    </div>
+
+    <div class="order-item__info">
+        <div class="order-item__info-item">
+            Название пиццы
+            <span>{{order.orderInfo.pizza_name.text.text}}</span>
+        </div>
+        <div class="order-item__info-item">
+            Вид теста
+            <span>{{order.orderInfo.pizza_dough.text.text}}</span>
+        </div>
+        <div class="order-item__info-item">
+            Бортик
+            <span>{{order.orderInfo.pizza_border.text.text}}</span>
+        </div>
+        <div class="order-item__info-item">
+            Чего добавить больше
+            <span>{{order.orderInfo.pizza_additive.text.text}}</span>
+        </div>
+        <div class="order-item__info-item">
+            Адрес
+            <span>{{order.orderInfo.pizza_address}}</span>
+        </div>
+        <div class="order-item__info-item">
+            Коментарий к заказу
+            <span>{{order.orderInfo.pizza_comment}}</span>
+        </div>
+        <div class="order-item__info-item">
+            Статус заказа
+            <select (change)="setStatus($event)">
+                <option *ngFor="let category of categories" [value]="category.value" [selected]="order.status.value === category.value">{{category.text}}</option>
+            </select>
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,39 @@
+// USER VARIABLES SECTION
+
+$accent: #7F9BD2 // Accent Color
+$fontsize: 18px // Body Font Size
+$textcolor: #3B3B3B// Text Color
+$light: #F6F8FA
+
+$userfont: Noto Sans, sans-serif // User Font Family
+$systemfont: -apple-system, BlinkMacSystemFont, Arial, sans-serif // System Font Family
+
+$bg: #9FC1E4
+
+$spacing-big: 20px
+$spacing-sm: 10px
+
+// GENERAL DOCUMENT STYLES
+
+::placeholder
+	color: #666
+
+::selection
+	background-color: $accent
+	color: #fff
+
+input, textarea
+	outline: none
+	&:focus:required:invalid
+		border-color: red
+	&:required:valid
+		border-color: green
+
+body
+	font-family: $userfont
+	font-size: $fontsize
+	color: $textcolor
+	min-width: 320px
+	position: relative
+	overflow-x: hidden
+

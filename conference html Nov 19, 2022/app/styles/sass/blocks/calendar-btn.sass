@@ -1,0 +1,81 @@
+.calendar-btn
+  display: flex
+  align-content: center
+  text-align: right
+  color: $btn-text-light
+  background-color: transparent
+  border: none
+  cursor: pointer
+  &::before
+    content: 'Добавить\A в календарь'
+    white-space: pre-wrap
+    margin: auto 0
+  span
+    display: inline-block
+    margin: auto 0
+    margin-left: 16px
+    width: 34px
+    height: 34px
+    border-radius: 100%
+    border: 1px solid $accent
+    transition: .25s ease-in-out background-color
+    position: relative
+    &::before, &::after
+      content: ''
+      position: absolute
+      top: 0
+      bottom: 0
+      right: 0
+      left: 0
+      background-repeat: no-repeat
+      background-position: center
+      background-size: 10px
+      transition: .25s ease-in-out opacity
+    &::before
+      background-image: url(../images/dist/add-blue.svg)
+      opacity: 1
+    &::after
+      background-image: url(../images/dist/add-white.svg)
+      opacity: 0
+
+.calendar-btn
+  &:hover
+    span
+      background-color: $accent
+      &::before
+        opacity: 0
+      &::after
+        opacity: 1
+
+//End of general button style
+
+
+.calendar-btn[enabled]
+  &::before
+    content: 'В календаре'
+  span
+    border-color: #888899
+    &::before
+      background-image: url(../images/dist/checked.svg)
+    &::after
+      background-image: url(../images/dist/close-light.svg)
+  &:hover
+    &::before
+      content: 'Убрать'
+    span
+      background-color: #fff
+
+.calendar-btn[archive]
+  &::before
+    content: 'Смотреть'
+  span
+    border-color: #888899
+    &::before
+      background-image: url(../images/dist/watch-black.svg)
+      opacity: 1
+    &::after
+      background-image: url(../images/dist/watch-white.svg)
+  &:hover
+    span
+      background-color: $accent
+      border-color: $accent

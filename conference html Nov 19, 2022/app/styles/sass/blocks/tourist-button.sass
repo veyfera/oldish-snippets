@@ -1,0 +1,84 @@
+.tourist-button
+  border-radius: 46px
+  padding: 0
+  span:first-child
+    padding: 10.5px
+    margin: 0 auto
+    line-height: 125%
+    &::after
+      content: 'Добавить'
+  background-color: #fff
+  border: 1px solid $accent
+  font-size: 18px
+  font-weight: 700
+  transition: .25s ease-in-out background-color, .25s ease-in-out color
+  display: flex
+  justify-content: space-between
+  align-content: center
+  align-content: stretch
+  height: 44px
+  width: 100%
+  
+  &:hover
+    background-color: $accent
+    color: #fff
+    cursor: pointer
+    .tourist-button__img
+      border-left: 1px solid #fff
+
+.tourist-button__img
+  display: block
+  background-image: url(../images/dist/add-white.svg)
+  background-repeat: no-repeat
+  background-position: center
+  background-color: $accent
+  background-size: 14px
+
+  border-left: 1px solid $accent
+  padding: 15px
+  height: 100%
+  width: 44px
+  margin: auto 0
+  border-radius: 0 46px 46px 0
+  transition: .25s ease-in-out border-color, .25s ease-in-out color
+
+
+.tourist-button[enabled], .tourist-button[enabled] .tourist-button__img
+  background-color: $light-bg
+  border-color: $btn-border-light
+  color: $btn-text-light
+  span
+    &::after
+      content: 'Добавленно'
+  .tourist-button__img
+    background-image: url(../images/dist/checked.svg)
+    position: relative
+    transition: .25s ease-in-out background-size
+    &::after
+      content: ''
+      position: absolute
+      top: 0
+      bottom: 0
+      right: 0
+      left: 0
+      background-image: url(../images/dist/close.svg)
+      background-repeat: no-repeat
+      background-position: center
+      background-size: 0
+      transition: .25s ease-in-out background-size
+  &:hover
+    color: $textcolor
+    .tourist-button__img
+      background-size: 0
+      border-color: inherit
+      &::after
+        background-size: 14px
+
+.tourist-button[archive]
+  span:first-child
+    &::after
+      content: 'Смотреть'
+  .tourist-button__img
+    background-image: url(../images/dist/watch-white.svg)
+    background-size: 14px
+

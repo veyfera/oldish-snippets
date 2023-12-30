@@ -1,0 +1,58 @@
+.editor-wrapper
+  label
+    font-size: $spacing-big
+    input
+      font-size: $fontsize
+      padding: 5px
+      margin: 0 0 $spacing-big $spacing-sm
+
+.editor
+  width: 60%
+  margin: 0 auto
+  @media (max-width : 754px)
+    width: 95%
+
+.editor__modes
+  display: flex
+  justify-content: center
+  margin-bottom: $spacing-sm
+  img
+    border: 1px solid $textcolor
+    width: 35px
+    height: 35px
+    padding: $spacing-sm
+    transition: background-color .25s ease-in-out
+    &:first-child
+      border-right: none
+  .active
+    background-color: #7F9BD2
+
+.editor__visual
+  fieldset
+    text-align: left
+    margin-bottom: $spacing-sm
+    legend
+      font-size: 24px
+    label
+      font-size: $spacing-big
+      input
+        display: block
+        padding: 5px
+        margin: 5px 0 $spacing-sm
+        font-size: $fontsize
+
+.add-section
+  text-align: right
+  input, button
+    font-size: $fontsize
+    padding: 5px
+  @media (max-width : 396px)
+    display: flex
+
+.save-button
+  font-size: $fontsize 
+  padding: $spacing-sm $spacing-big
+  margin: $spacing-sm
+
+.editor__footer
+  text-align: center

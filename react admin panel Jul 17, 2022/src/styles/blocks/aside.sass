@@ -1,0 +1,62 @@
+#root
+  display: grid
+  grid-template-columns: 272px auto 
+  grid-template-rows: auto auto
+
+.side-menu
+  height: 100%
+  height: 900px
+  display: flex
+  &__navigation
+    width: 48px
+    background-color: $accent
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+
+.navigation__icons
+  a
+    height: 60px
+    display: block
+    display: flex
+    align-items: center
+    justify-content: center
+    transition: background-color .25s ease-in-out
+    img
+      max-width: 20px
+    &:hover
+      background-color: $accent-light
+
+.icon_selected
+  background-color: $accent-light
+
+.logo
+  text-transform: uppercase
+  margin: 20px 42px
+  font-size: 16px
+  font-weight: 700
+  line-height: 25.6px
+  letter-spacing: 3%
+  span
+    margin-top: 2px
+    text-align: center
+    display: block
+    font-size: 12px
+    line-height: 19.2px
+    font-weight: 400
+    letter-spacing: 0.2px
+
+.aside__content
+  width: 224px
+  background-color: $bg-light
+
+.organisation__item
+  background-color: $bg
+  padding: $spacing-sm 16px
+  color: $accent
+  display: flex
+  p
+    margin: 0
+    margin-left: 12px
+    line-height: 20px
+    font-weight: 600
