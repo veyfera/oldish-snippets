@@ -1,0 +1,38 @@
+table {
+    border-spacing: 0;
+    width: 100%;
+}
+
+thead {
+    border-bottom: 1px solid #333;
+    background-color: #fafafa;
+}
+
+td, th {
+    padding: 10px 40px;
+    text-align: center;
+}
+
+th span {
+    display: block;
+    color: darkcyan;
+}
+
+tbody > tr:nth-child(odd){
+    background-color: #F3F3F3;
+}
+
+tr > td:first-child {
+    text-align: left;
+}
+
+
+.turn-timer {
+    background-color: #F1DDDD;
+    color: #C88785;
+}
+
+.App {
+    padding: 20px;
+}
+

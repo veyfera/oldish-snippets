@@ -1,0 +1,282 @@
+body, html
+	background-color: #000
+
+a
+	color: #fff
+	&:hover
+		color: #fff
+		opacity: 1
+
+.container
+	@include media-breakpoint-down(sm) 
+	padding: 0
+
+.header
+	height: 500px
+	background-size: cover
+	position: relative
+	&::before
+		content: ''
+		// background-image: linear-gradient(rgba(#000, .2), rgba(#000, .8))
+		background-color: rgba(#000, .4)
+		position: absolute
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+
+.menu
+	> div, nav
+		z-index: 1
+	width: 100%
+	display: flex
+	justify-content: space-between
+	align-items: center
+	color: #fff
+	padding: 30px 32px 30px 50px
+	@include media-breakpoint-down(sm) 
+		padding: 30px 32px 50px
+
+.login
+	display: block
+	border: 1.5px solid #fff
+	padding: 5px 20px
+	font-size: 14px
+	a
+		&:hover
+			color: #fff
+
+.language-select
+	border-bottom: 1px solid #fff
+	padding: 0 5px
+	font-size: 14px
+
+.language-select__item
+	display: inline-block
+	padding: 0 5px
+	a
+		color: #fff
+		opacity: .5
+		transition: opacity .25s ease
+		&:hover
+			opacity: 1
+			text-decoration: none
+
+.heading
+	width: 250px
+	margin: auto
+	position: relative
+	text-align: center
+	color: #fff
+
+.heading__main
+	font-size: 120px
+	line-height: .8
+	letter-spacing: 10px
+	font-family: american-copper-b
+	font-weight: 800
+	span
+		font-size: 50px
+		font-weight: 500
+		text-align: right
+		display: block
+		text-indent: 15px
+
+.heading__sub
+	margin-top: 40px
+	color: #ccc
+	font-weight: bold
+
+.services
+	background-color: #2d2d2d
+	padding: 0 35px
+
+// .row
+// 	&:nth-child(0)
+// 		.col-md-3
+// 			.services-list-item
+// 				.services-list-item__logo
+// 					svg
+// 						path
+// 							fill: #000
+
+.col-md-3
+	padding: 0
+	&:hover
+		background-color: #000
+
+.services-list-item
+	height: auto
+	padding: 120px 25px
+	transition: background-color .25s ease-out
+	.services-list-item__button
+		opacity: 0
+		transition: opacity .25s ease
+	&:hover
+		.services-list-item__logo
+			svg
+				path
+					opacity: 1
+					fill: #fff
+		.services-list-item__button
+			opacity: 1
+		.logo-yellow
+			svg
+				path
+					fill: #ffe34d
+		.logo-blue
+			svg
+				path
+					fill: #3a71db
+		.logo-lightblue
+			svg
+				path
+					fill: #2698c9
+
+	@include media-breakpoint-down(sm) 
+		padding: 40px 25px 40px
+		height: auto
+
+.services-list-item__logo
+	display: inline-block
+	height: 25px
+	svg
+		path
+			opacity: .5
+			transition: opacity .25s ease-out
+
+
+.services-list-item__heading
+	margin-top: 40px
+	font-size: 24px
+	color: #fff
+	margin-bottom: 20px
+
+.services-list-item__subHeading
+	color: #ccc
+	font-size: 14px
+	font-weight: 500
+	margin-bottom: 10px
+
+.services-list-item__text
+	font-size: 14px
+	color: #888
+
+.services-list-item__button
+	text-align: center
+	margin-top: 10px
+	padding: 5px 20px
+	border: 1px solid rgba(#fff, .5)
+	transition: border .25s ease
+	a
+		display: block
+	&:hover
+		border: 1px solid #fff
+
+
+.info
+	background-color: #252525
+	padding: 85px 45px
+	@include media-breakpoint-down(sm) 
+		padding: 85px 20px
+
+.info__heading
+	color: #fff
+	font-size: 34px
+	padding-bottom: 40px
+
+.info-sub-heading
+	color: #fff
+	opacity: 0.8
+	text-transform: uppercase
+	font-size: 14px
+	padding-bottom: 15px
+
+.info-list
+	padding-bottom: 30px
+
+.info-list__item
+	a
+		color: #fff
+		opacity: 0.3
+		text-decoration: underline
+		transition: opacity .25s ease
+		&:hover
+			opacity: 1
+
+.soc-wrap
+	background-color: #000
+	padding: 40px 30px
+
+.soc-small-heading
+	color: #fff
+	text-transform: uppercase
+	font-size: 14px
+
+.soc-big-heading
+	color: #fff
+	font-size: 24px
+
+.soc-list
+	padding-top: 20px
+
+.soc-list-item
+	display: flex
+
+.soc-list-item__logo
+	margin-top: 7px
+	height: 40px
+	width: 40px
+	margin-right: 15px
+
+.soc-name
+	color: #fff
+	font: 24px
+	font-weight: bold
+	padding-bottom: 5px
+
+.soc-desc
+	color: #fff
+	opacity: 0.6
+	font-size: 14px
+	line-height: 1.2
+
+.main-footer
+	background-color: #252525
+	padding: 0px 45px
+	@include media-breakpoint-down(sm) 
+		padding: 0 20px
+
+.main-footer__wrap
+	border-top: 1px solid rgba(#fff, 0.3)
+	display: flex
+	justify-content: space-between
+	align-items: center
+	padding: 20px 0
+
+.copyright
+	color: #fff
+	opacity: 0.5
+	font-size: 12px
+
+.contacts
+	display: flex
+	justify-content: center
+
+.contacts__item
+	margin: 0 10px
+	@include media-breakpoint-down(sm) 
+		margin: 0 5px
+
+.contact-img
+	height: 20px
+	width: auto
+	opacity: 0.5
+	transition: opacity .25s ease
+	&:hover
+		opacity: 1
+
+.wiki
+	font-size: 12px
+	a
+		opacity: 0.5

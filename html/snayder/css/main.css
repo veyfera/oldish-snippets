@@ -1,0 +1,244 @@
+/* USER VARIABLES SECTION */
+
+:root {
+	--text: #767676;
+	--regular-text: 14px;
+	--lineheight: 22px;
+	--userfont: Open Sans, sans-serif;
+	--systemfont: -apple-system, BlinkMacSystemFont, Arial, sans-serif;
+
+    --dark-bg: #777;
+    --container-widht: 980px;
+}
+
+
+/* GENERAL CSS SETTINGS */
+
+::placeholder { color: #666; }
+input, textarea { outline: none; }
+input:focus:required:invalid, textarea:focus:required:invalid { border-color: red; }
+input:required:valid, textarea:required:valid { border-color: green; }
+
+body {
+	font-family: var(--userfont);
+	font-size: var(--regular-text);
+	line-height: var(--lineheight);
+    letter-spacing: 0.35px;
+	color: var(--text);
+	min-width: 320px;
+	position: relative;
+	overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    min-height: 100vh;
+}
+
+/* USER STYLES */
+
+/*COMMON*/
+.main-header, .main-footer {
+    width: 100%;
+    padding: 45px 10px 0;
+    margin-right: 4px;
+    display: flex;
+    justify-content: space-around;
+    background-color: #DCDCDC;
+}
+.main-header__wrap, .main-footer__wrap {
+    max-width: var(--container-widht);
+    display: grid;
+    grid-template-areas:
+        "logo sale contact";
+    grid-template-columns: 350px 238px 317px;
+    gap: 59px;
+    align-content: start;
+}
+
+/*HEADER*/
+.main-header {
+    padding: 45px 10px 54px;
+    margin-right: 4px;
+    background-color: #DCDCDC;
+}
+
+.main-header__logo {
+    grid-area: logo;
+    width: 318px;
+    height: 100px;
+}
+
+.main-header__sale {
+    grid-area: sale;
+    color: #777;
+    font-size: 17px;
+    letter-spacing: 0.43px;
+    margin-top: 25px;
+}
+
+.main-header__contact {
+    grid-area: contact;
+    padding-top: 10px;
+    font-size: 31px;
+    font-weight: 800;
+    color: var(--text);
+    letter-spacing: 0.77px;
+}
+.main-header__contact a{
+    text-decoration: none;
+    color: var(--text);
+    display: block;
+    white-space: nowrap;
+}
+
+/*TOP MENU*/
+.top-menu {
+    width: 100%;
+    background-color: var(--dark-bg);
+    padding: 16px 0;
+}
+
+.top-menu ul {
+    max-width: var(--container-widht);
+    list-style-type: none;
+    margin: 0 auto;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.top-menu ul li {
+    border-right: 1px solid #fff;
+    padding: 0 16px;
+}
+.top-menu ul li:last-child{
+    border: none;
+}
+
+.top-menu ul li a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+    letter-spacing: 0.45px;
+}
+.top-menu ul li a:hover{
+    text-decoration: underline;
+}
+
+/*SLIDER*/
+.slider {
+    margin-top: 4px;
+    width: 100%;
+}
+
+.slider__image {
+    width: 100%;
+    height: 400px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/*CONTENT*/
+.content {
+    max-width: var(--container-widht);
+    margin: 48px auto 0;
+    display: grid;
+    grid-template-columns: 350px 570px;
+    gap: 59px;
+}
+
+
+.news {
+    color: #fff;
+    background-color: var(--dark-bg);
+    padding: 19px 22px 18px 36px;
+    min-width: 350px;
+    margin-right: 59px;
+    display: flex;
+    flex-direction: column;
+}
+.news h2{
+    font-size: 40px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    line-height: 46px;
+    font-family: PT Sans;
+    margin-bottom: 40px;
+}
+.news ul{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+.news li{
+    margin-bottom: 22px;
+    letter-spacing: 0.35px;
+}
+.news__date{
+    font-style: italic;
+    display: block;
+}
+
+.news__archive {
+    text-align: right;
+    margin-top: auto;
+}
+.news__archive a{
+    color: white;
+}
+
+
+.content__main h2{
+    font-size: 33px;
+    margin-top: 20px;
+    margin-bottom: 15px;
+}
+.content__main h3{
+    font-size: 24px;
+    margin-bottom: 45px;
+}
+
+.content__main h4{
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 14px;
+}
+
+.content__secondary {
+    display: flex;
+}
+.content__secondary article:first-child{
+    margin-right: 59px;
+}
+
+/*FOOTER*/
+.main-footer {
+    background-color: var(--dark-bg);
+    color: #fff;
+    padding-bottom: 50px;
+    margin-top: 200px;
+}
+.main-footer a{
+    color: #fff;
+}
+
+.main-footer__info a{
+    display: block;
+    text-decoration: none;
+}
+
+.main-footer__menu ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+.main-footer__menu li{
+    line-height: 26px;
+}
+
+.main-footer__developer span:first-child{
+    text-decoration: underline;
+}
+.main-footer__developer span:last-child{
+    display: block;
+}
