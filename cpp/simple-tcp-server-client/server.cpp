@@ -58,14 +58,21 @@ class Server
             exit(0);
         }
         cout << "Connected with client" << endl;
+        int bts;
+        //do
         while(1)
         {
             memset(&msg, 0, sizeof(msg));
-            recv(newSd, (char*)&msg, sizeof(msg), 0);
-            cout << msg << endl;
-            cout << "Got message from client" << endl;
-            break;
+            bts = recv(newSd, (char*)&msg, sizeof(msg), 0);
+            if(bts != 0)
+            {
+                cout << msg << endl;
+                //cout << "Got message from client" << endl;
+                //break;
+            }
+            //send(newSd, (char*)&msg, strlen(msg) 0);
         }
+        //} while(bts)
     }
 
     void me()
@@ -85,7 +92,7 @@ int main(int argc, char* argv[])
     Server s1(port);
     //s1(321);
     //cout << "User defined server:";
-    s1.me();
+    //s1.me();
     //cout << "Predefined server:";
     //s2.me();
 
