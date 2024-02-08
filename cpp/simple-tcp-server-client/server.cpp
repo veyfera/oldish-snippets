@@ -3,14 +3,7 @@
 #include<sys/socket.h>
 #include<netinet/in.h>
 #include<string.h>
-//#include<string.h>
-//#include <stdlib.h>
-//#include<sys/types.h>
-//#include<netdb.h>
-//#include<arpa/inet.h>
-//#include<fstream>
-//#include<sys/uio.h>
-//#include<unistd.h>
+#include<unistd.h>
 using namespace std;
 
 class Server
@@ -22,8 +15,6 @@ class Server
     Server(int p)
     {
         port = p;
-        //bzero((char*)&serverAddr, sizeof(serverAddr));
-        //serverAddr = {};
         serverAddr.sin_family = AF_INET;
         serverAddr.sin_addr.s_addr = htonl(INADDR_ANY);
         serverAddr.sin_port = htons(port);
@@ -48,31 +39,53 @@ class Server
         cout << "Ready for connections, listening on port: " << port << endl;
         listen(serverSd, 5);
 
-        sockaddr_in newAddr;
-        socklen_t newSocketAddrSize = sizeof(newAddr);
-        int newSd = accept(serverSd, (struct sockaddr*)&newAddr, &newSocketAddrSize);
-        if(newSd < 0)
-        {
-            //cerr << "Error connecting with client" << endl;
-            cerr << "Error accepting request from client" << endl;
-            exit(0);
-        }
-        cout << "Connected with client" << endl;
-        int bts;
-        //do
+        fd_set master;
+        FD_ZERO(&master);
+
+        FD_SET(serverSd, &master);
+
+        cout << "Before while llop" << endl;
         while(1)
         {
-            memset(&msg, 0, sizeof(msg));
-            bts = recv(newSd, (char*)&msg, sizeof(msg), 0);
-            if(bts != 0)
+            fd_set copy = master;
+            int socketCount = select(0, &copy, nullptr, nullptr, nullptr);
+            cout << "In while loop" << endl;
+            for(int i = 0; i < socketCount; i++)
             {
-                cout << msg << endl;
-                //cout << "Got message from client" << endl;
-                //break;
+                cout << "Entered for loop" << endl;
+                int sock = FD_ISSET(i, &copy);
+
+                if(sock == serverSd)
+                {
+                    cout << "New connection incoming" << endl;
+                    sockaddr_in newAddr;
+                    socklen_t newSocketAddrSize = sizeof(newAddr);
+                    int client = accept(serverSd, (struct sockaddr*)&newAddr,
+                            &newSocketAddrSize);
+                    FD_SET(client, &master);
+                    cout << "New client connected" << endl;
+                }
+                else
+                {
+                    cout << "New message came" << endl;
+                    memset(&msg, 0, sizeof(msg));
+
+                    int bytesIn = recv(sock, msg, 1000, 0);
+                    if (bytesIn <= 0)
+                    {
+                        close(sock);
+                        FD_CLR(sock, &master);
+                    }
+                    else
+                    {
+                        cout << msg << endl;
+                    }
+
+                }
+
             }
-            //send(newSd, (char*)&msg, strlen(msg) 0);
+
         }
-        //} while(bts)
     }
 
     void me()
@@ -90,12 +103,7 @@ int main(int argc, char* argv[])
     }
     int port = atoi(argv[1]);
     Server s1(port);
-    //s1(321);
-    //cout << "User defined server:";
-    //s1.me();
-    //cout << "Predefined server:";
-    //s2.me();
 
     s1.start();
-    //return 0;
+    return 0;
 }

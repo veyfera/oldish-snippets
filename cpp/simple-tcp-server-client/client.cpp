@@ -5,7 +5,6 @@
 #include<arpa/inet.h>
 #include<chrono>
 #include<thread>
-//#include<sys/types.h>
 #include<netdb.h>
 
 
@@ -31,14 +30,10 @@ class Client
 
         while(1)
         {
-            //cout << "hello" << endl;
             updMsg();
             cout << msg << "I am " << name << endl;
             send(clientSd, (char*)&msg, sizeof(msg), 0);
-            //this_thread::sleep_for(5000ms);
             this_thread::sleep_for(chrono::milliseconds(timeInterval*1000));
-            //send(clientSd, (char*)&msg, sizeof(msg), 0);
-            //break;
         }
     }
 
@@ -61,18 +56,12 @@ class Client
         {
             strcpy(name, n);
             port = p; timeInterval = t;
-            //strcpy(msg, "Hello, work! It works...");
-            //currentTime();
-            //cout << timeString << endl;
 
             struct hostent* host = gethostbyname(serverIp);
-            //char* localIp = inet_ntoa(*(struct in_addr*))
 
             clientAddr.sin_family = AF_INET;
             clientAddr.sin_addr.s_addr =
                 inet_addr(inet_ntoa(*(struct in_addr*)*host->h_addr_list));
-            //clientAddr.sin_addr.s_addr = htonl(INADDR_ANY);
-            //clientAddr.sin_addr.s_addr = inet_addr(localIP);
             clientAddr.sin_port = htons(port);
             start();
         }
@@ -86,11 +75,9 @@ int main(int argc, char* argv[])
         exit(0);
     }
 
-    //char name[100] = "Debian";
     char *name = argv[1];
     int port = atoi(argv[2]);
     int timeInterval = atoi(argv[3]);
-    //Client c1("Debian", 12345, 1);
     Client c1(name, port, timeInterval);
     return 0;
 }
