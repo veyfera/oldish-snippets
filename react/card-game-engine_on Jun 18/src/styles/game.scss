@@ -1,0 +1,26 @@
+.game-field {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    user-select: none;
+}
+
+.rectangle {
+    position: absolute;
+    animation: rec-spawn 1s ease-in-out;
+    height: $card-height;
+    user-select: none;
+    z-index: 0;
+}
+
+.rectangle-img {
+    background-color: lightgrey;
+}
+
+@keyframes rec-spawn {
+    0% {
+        top: 0;
+        left: 0;
+    }
+}

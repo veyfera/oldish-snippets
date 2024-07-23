@@ -1,0 +1,16 @@
+$primary-color: #80e0ff;
+$card-width: 80px;
+$card-height: 100px;
+//$card-width: 200px;
+//$card-height: 300px;
+
+$header-height: 50px;
+$footer-height: 80px;
+ 
+:export {
+  primaryColor: $primary-color;
+  cardWidth: $card-width;
+  cardHeight: $card-height;
+  headerHeight: $header-height;
+  footerHeight: $footer-height;
+}

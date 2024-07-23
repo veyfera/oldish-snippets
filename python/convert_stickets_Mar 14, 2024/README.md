@@ -1,0 +1,1 @@
+Imagemagic has to be installed

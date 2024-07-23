@@ -1,0 +1,19 @@
+
+.contacts-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 80%;
+    min-width: 320px;
+    padding: 20px;
+    margin: 0 auto;
+    max-width: 640px;
+
+    input, textarea, button {
+        padding: 10px;
+    }
+    
+    button {
+        background-color: #fff;
+    }
+}
